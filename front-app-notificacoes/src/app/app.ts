@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { Notificacoes } from '@components/notificacoes/notificacoes';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [Notificacoes],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

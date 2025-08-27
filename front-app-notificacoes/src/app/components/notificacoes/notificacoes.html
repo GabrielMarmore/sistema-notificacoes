@@ -1,0 +1,39 @@
+<div>
+    <h2>Enviar notificações</h2>
+    <form (submit)="criarNotificacao(novaNotificacao.value); $event.preventDefault(); novaNotificacao.value = '';">
+        <div class="input-group">
+            <input #novaNotificacao type="text" placeholder="Digite o conteudo da notificacão" />
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+
+    <div *ngIf="erro.length > 1" class="mensagem_erro">{{ erro }}</div>
+
+    <div>
+        <h2>Tabela de notificações</h2>
+        <table>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Content
+                </th>
+                <th>
+                    Status
+                </th>
+            </tr>
+            <tr *ngFor="let notificacao of notificacoes">
+                <td>
+                    {{notificacao.id}}
+                </td>
+                <td>
+                    {{notificacao.conteudo}}
+                </td>
+                <td>
+                    {{notificacao.status}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
