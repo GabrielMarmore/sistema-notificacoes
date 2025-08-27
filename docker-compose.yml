@@ -1,0 +1,39 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  back-app-notificacoes:
+    build: ./back-app-notificacoes
+    container_name: back-app-notificacoes
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - RABBITMQ_URL=amqp://rabbitmq
+      - FILA_ENTRADA=fila.notificacao.entrada.ANTERO
+      - FILA_STATUS=fila.notificacao.status.ANTERO
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ./back-app-notificacoes:/app
+      - back_node_modules:/app/node_modules
+
+  front-app-notificacoes:
+    build: ./front-app-notificacoes
+    container_name: front-app-notificacoes
+    restart: always
+    ports:
+      - "4200:4200"
+    depends_on:
+      - back-app-notificacoes
+    volumes:
+      - ./front-app-notificacoes:/app
+      - front_node_modules:/app/node_modules
+
+volumes:
+  back_node_modules:
+  front_node_modules:

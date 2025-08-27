@@ -1,0 +1,51 @@
+# ----------------------
+# Node / Angular / NestJS
+# ----------------------
+node_modules/
+dist/
+build/
+tmp/
+temp/
+
+# ----------------------
+# Configuração local
+# ----------------------
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# ----------------------
+# Logs
+# ----------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ----------------------
+# Environment
+# ----------------------
+.env
+.env.*.local
+
+# ----------------------
+# Coverage / Testes
+# ----------------------
+coverage/
+.nyc_output/
+karma-*.json
+test-results/
+
+# ----------------------
+# Angular specific
+# ----------------------
+.angular/
+.angular/cache/
+
+# ----------------------
+# Docker
+# ----------------------
+docker-compose.override.yml
