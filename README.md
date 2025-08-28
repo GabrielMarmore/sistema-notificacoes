@@ -1,8 +1,9 @@
-# sistema-notificacoes
-Sistema de Notificações Assíncronas Simplificado  
-Tecnologias: **Angular** (frontend) / **NestJS** (backend) / **RabbitMQ** (mensageria)
+# Sistema de Notificações Assíncronas Simplificado
 
----
+Este projeto é um sistema de notificações assíncronas simplificado, desenvolvido com as tecnologias:
+* **Angular** (frontend)
+* **NestJS** (backend)
+* **RabbitMQ** (mensageria)
 
 ## Rodar o projeto
 
